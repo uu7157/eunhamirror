@@ -515,25 +515,25 @@ if path.exists('categories.txt'):
 if BASE_URL:
     Popen(f"gunicorn web.wserver:app --bind 0.0.0.0:{SERVER_PORT}", shell=True)
 
-run(["qbittorrent-nox", "-d", "--profile=."])
-if not path.exists('.netrc'):
-    run(["touch", ".netrc"])
-run(["cp", ".netrc", "/root/.netrc"])
-run(["chmod", "600", "/root/.netrc"])
-run(["chmod", "600", ".netrc"])
-run(["chmod", "+x", "aria.sh"])
-run("./aria.sh", shell=True)
-if path.exists('accounts.zip'):
-    if path.exists('accounts'):
-        run(["rm", "-rf", "accounts"])
-    run(["unzip", "-q", "-o", "accounts.zip", "-W", "accounts/*.json"])
-    run(["chmod", "-R", "777", "accounts"])
-    remove('accounts.zip')
-if not path.exists('accounts'):
-    config_dict['USE_SERVICE_ACCOUNTS'] = False
-sleep(0.5)
+# run(["qbittorrent-nox", "-d", "--profile=."])
+# if not path.exists('.netrc'):
+#     run(["touch", ".netrc"])
+# run(["cp", ".netrc", "/root/.netrc"])
+# run(["chmod", "600", "/root/.netrc"])
+# run(["chmod", "600", ".netrc"])
+# run(["chmod", "+x", "aria.sh"])
+# run("./aria.sh", shell=True)
+# if path.exists('accounts.zip'):
+#     if path.exists('accounts'):
+#         run(["rm", "-rf", "accounts"])
+#     run(["unzip", "-q", "-o", "accounts.zip", "-W", "accounts/*.json"])
+#     run(["chmod", "-R", "777", "accounts"])
+#     remove('accounts.zip')
+# if not path.exists('accounts'):
+#     config_dict['USE_SERVICE_ACCOUNTS'] = False
+# sleep(0.5)
 
-aria2 = ariaAPI(ariaClient(host="http://localhost", port=6800, secret=""))
+# aria2 = ariaAPI(ariaClient(host="http://localhost", port=6800, secret=""))
 
 
 def get_client():
