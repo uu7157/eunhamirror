@@ -533,7 +533,7 @@ if BASE_URL:
 #     config_dict['USE_SERVICE_ACCOUNTS'] = False
 # sleep(0.5)
 
-# aria2 = ariaAPI(ariaClient(host="http://localhost", port=6800, secret=""))
+aria2 = ariaAPI(ariaClient(host="http://localhost", port=6800, secret=""))
 
 
 def get_client():
